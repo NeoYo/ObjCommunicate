@@ -22,7 +22,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="hideKyboard:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5cZ-K2-efb"/>
+                                    <action selector="hideKyboard:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8BW-0b-yAR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFH-Bn-pRz">
@@ -31,8 +31,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="logIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZVi-91-UKY"/>
-                                    <segue destination="Ew2-Or-KCI" kind="presentation" identifier="toLogIn" modalTransitionStyle="coverVertical" id="X2y-hg-YaN"/>
+                                    <action selector="logIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NbV-XI-CID"/>
+                                    <segue destination="Ew2-Or-KCI" kind="presentation" identifier="toMainView" modalTransitionStyle="coverVertical" id="X2y-hg-YaN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0T-qa-Cud">
@@ -47,24 +47,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的学号：" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-Oe-sFs">
-                                <rect key="frame" x="119" y="207" width="146" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="hideKyboard:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Xzx-Bq-mzS"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="请输入您的密码：" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5E8-VW-8MS">
-                                <rect key="frame" x="119" y="264" width="151" height="30"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="join"/>
-                                <connections>
-                                    <action selector="hideKyboard:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="eYe-Ye-ZLr"/>
-                                    <action selector="logIn:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="ohl-eh-FL0"/>
-                                </connections>
-                            </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lo2-qG-tT0">
                                 <rect key="frame" x="171" y="411" width="51" height="31"/>
                             </switch>
@@ -74,13 +56,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的密码：" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kCI-be-bo4">
+                                <rect key="frame" x="119" y="264" width="146" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="logIn:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="S3v-eX-azY"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的学号：" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-Oe-sFs">
+                                <rect key="frame" x="119" y="207" width="146" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="hideKyboard:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="S2J-cy-s0i"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.54999999999999993" y="0.0" width="1" height="1"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="passWord" destination="5E8-VW-8MS" id="UU6-ED-2vn"/>
+                        <outlet property="passWord" destination="kCI-be-bo4" id="GzY-FP-6pN"/>
                         <outlet property="studentID" destination="8P4-Oe-sFs" id="01n-35-HoX"/>
                     </connections>
                 </viewController>
@@ -128,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="527" y="-14"/>
         </scene>
-        <!--Main-->
+        <!--Sms-->
         <scene sceneID="HG9-GV-nE5">
             <objects>
-                <tabBarController id="Ew2-Or-KCI" userLabel="Main" customClass="MainViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Sms" id="Ew2-Or-KCI" userLabel="Sms" customClass="MainViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="RWC-Ht-xdw">
