@@ -32,7 +32,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NbV-XI-CID"/>
-                                    <segue destination="Ew2-Or-KCI" kind="presentation" identifier="toMainView" modalTransitionStyle="coverVertical" id="X2y-hg-YaN"/>
+                                    <segue destination="Ew2-Or-KCI" kind="presentation" identifier="toLogIn" modalTransitionStyle="coverVertical" id="X2y-hg-YaN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0T-qa-Cud">
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="-633" y="201"/>
         </scene>
-        <!--SecondScene-->
+        <!--Search-->
         <scene sceneID="BVP-SM-del">
             <objects>
-                <viewController id="W6k-8m-ygT" userLabel="SecondScene" sceneMemberID="viewController">
+                <viewController id="W6k-8m-ygT" userLabel="Search" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9fK-4b-jfI"/>
                         <viewControllerLayoutGuide type="bottom" id="ngK-Lq-hr0"/>
@@ -100,17 +100,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="Dkx-s8-Clo"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="Dkx-s8-Clo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nda-gN-S2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="403" y="356"/>
+            <point key="canvasLocation" x="301" y="274"/>
         </scene>
-        <!--FirstScene-->
+        <!--Sms-->
         <scene sceneID="zAs-O1-BkP">
             <objects>
-                <viewController id="SAP-RG-hfS" userLabel="FirstScene" sceneMemberID="viewController">
+                <viewController id="SAP-RG-hfS" userLabel="Sms" customClass="SmsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ScG-dK-tbD"/>
                         <viewControllerLayoutGuide type="bottom" id="clT-oU-REJ"/>
@@ -125,12 +125,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBb-wb-kWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="-14"/>
+            <point key="canvasLocation" x="287" y="-372"/>
         </scene>
-        <!--Sms-->
+        <!--TabBar-->
         <scene sceneID="HG9-GV-nE5">
             <objects>
-                <tabBarController storyboardIdentifier="Sms" id="Ew2-Or-KCI" userLabel="Sms" customClass="MainViewController" sceneMemberID="viewController">
+                <tabBarController id="Ew2-Or-KCI" userLabel="TabBar" customClass="MainViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="RWC-Ht-xdw">

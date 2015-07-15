@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  SmsViewController.m
 //  UI
 //
-//  Created by WeixiYu on 15/7/14.
+//  Created by WeixiYu on 15/7/15.
 //  Copyright (c) 2015年 liveabean. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "SmsViewController.h"
 
-@interface FirstViewController ()
+@interface SmsViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation SmsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
