@@ -14,6 +14,8 @@
 		C831CE491B56028F00C3AFD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE481B56028F00C3AFD4 /* AppDelegate.m */; };
 		C831CE4B1B56036900C3AFD4 /* UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE4A1B56036900C3AFD4 /* UITests.m */; };
 		C831CE4E1B56217800C3AFD4 /* SmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE4D1B56217800C3AFD4 /* SmsViewController.m */; };
+		C831CE511B5632CC00C3AFD4 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */; };
+		C831CE541B56330E00C3AFD4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE531B56330E00C3AFD4 /* SearchViewController.m */; };
 		C8A074F51B55F847000AC691 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A074F41B55F847000AC691 /* main.m */; };
 		C8A075001B55F847000AC691 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A074FF1B55F847000AC691 /* Images.xcassets */; };
 		C8A075031B55F847000AC691 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A075011B55F847000AC691 /* LaunchScreen.xib */; };
@@ -40,6 +42,10 @@
 		C831CE4A1B56036900C3AFD4 /* UITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITests.m; sourceTree = "<group>"; };
 		C831CE4C1B56217800C3AFD4 /* SmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsViewController.h; sourceTree = "<group>"; };
 		C831CE4D1B56217800C3AFD4 /* SmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmsViewController.m; sourceTree = "<group>"; };
+		C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		C831CE521B56330E00C3AFD4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		C831CE531B56330E00C3AFD4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		C8A074EF1B55F847000AC691 /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A074F31B55F847000AC691 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8A074F41B55F847000AC691 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +100,10 @@
 				C831CE421B56026E00C3AFD4 /* MainViewController.m */,
 				C831CE4C1B56217800C3AFD4 /* SmsViewController.h */,
 				C831CE4D1B56217800C3AFD4 /* SmsViewController.m */,
+				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
+				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
+				C831CE521B56330E00C3AFD4 /* SearchViewController.h */,
+				C831CE531B56330E00C3AFD4 /* SearchViewController.m */,
 				C831CE471B56028F00C3AFD4 /* AppDelegate.h */,
 				C831CE481B56028F00C3AFD4 /* AppDelegate.m */,
 				C831CE3C1B56019400C3AFD4 /* Main.storyboard */,
@@ -234,8 +244,10 @@
 				C831CE4E1B56217800C3AFD4 /* SmsViewController.m in Sources */,
 				C831CE401B56026300C3AFD4 /* ViewController.m in Sources */,
 				C8A074F51B55F847000AC691 /* main.m in Sources */,
+				C831CE511B5632CC00C3AFD4 /* SearchResultsViewController.m in Sources */,
 				C831CE431B56026E00C3AFD4 /* MainViewController.m in Sources */,
 				C831CE491B56028F00C3AFD4 /* AppDelegate.m in Sources */,
+				C831CE541B56330E00C3AFD4 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
