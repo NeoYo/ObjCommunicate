@@ -19,6 +19,7 @@
 		C8A074F51B55F847000AC691 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A074F41B55F847000AC691 /* main.m */; };
 		C8A075001B55F847000AC691 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A074FF1B55F847000AC691 /* Images.xcassets */; };
 		C8A075031B55F847000AC691 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A075011B55F847000AC691 /* LaunchScreen.xib */; };
+		C8EDDFF61B576E7500BD791A /* CZSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EDDFF51B576E7500BD791A /* CZSearchResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		C8A075021B55F847000AC691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C8A075081B55F848000AC691 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A0750D1B55F848000AC691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8EDDFF41B576E7500BD791A /* CZSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZSearchResult.h; sourceTree = "<group>"; };
+		C8EDDFF51B576E7500BD791A /* CZSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZSearchResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 		C8A074F11B55F847000AC691 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C8ED237B1B57585E00772367 /* other */,
 				C831CE3E1B56026300C3AFD4 /* ViewController.h */,
 				C831CE3F1B56026300C3AFD4 /* ViewController.m */,
 				C831CE411B56026E00C3AFD4 /* MainViewController.h */,
@@ -102,10 +106,10 @@
 				C831CE4D1B56217800C3AFD4 /* SmsViewController.m */,
 				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
 				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
+				C8EDDFF41B576E7500BD791A /* CZSearchResult.h */,
+				C8EDDFF51B576E7500BD791A /* CZSearchResult.m */,
 				C831CE521B56330E00C3AFD4 /* SearchViewController.h */,
 				C831CE531B56330E00C3AFD4 /* SearchViewController.m */,
-				C831CE471B56028F00C3AFD4 /* AppDelegate.h */,
-				C831CE481B56028F00C3AFD4 /* AppDelegate.m */,
 				C831CE3C1B56019400C3AFD4 /* Main.storyboard */,
 				C8A074FF1B55F847000AC691 /* Images.xcassets */,
 				C8A075011B55F847000AC691 /* LaunchScreen.xib */,
@@ -138,6 +142,15 @@
 				C8A0750D1B55F848000AC691 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8ED237B1B57585E00772367 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				C831CE471B56028F00C3AFD4 /* AppDelegate.h */,
+				C831CE481B56028F00C3AFD4 /* AppDelegate.m */,
+			);
+			name = other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +259,7 @@
 				C8A074F51B55F847000AC691 /* main.m in Sources */,
 				C831CE511B5632CC00C3AFD4 /* SearchResultsViewController.m in Sources */,
 				C831CE431B56026E00C3AFD4 /* MainViewController.m in Sources */,
+				C8EDDFF61B576E7500BD791A /* CZSearchResult.m in Sources */,
 				C831CE491B56028F00C3AFD4 /* AppDelegate.m in Sources */,
 				C831CE541B56330E00C3AFD4 /* SearchViewController.m in Sources */,
 			);
