@@ -19,6 +19,7 @@
 		C89258FF1B5B6E89006F6A62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C89258FE1B5B6E89006F6A62 /* Images.xcassets */; };
 		C8A074F51B55F847000AC691 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A074F41B55F847000AC691 /* main.m */; };
 		C8A075031B55F847000AC691 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A075011B55F847000AC691 /* LaunchScreen.xib */; };
+		C8E5EB0A1B5D3C620053F662 /* SocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E5EB091B5D3C620053F662 /* SocketViewController.m */; };
 		C8EDDFF61B576E7500BD791A /* CZSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EDDFF51B576E7500BD791A /* CZSearchResult.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		C8A075021B55F847000AC691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C8A075081B55F848000AC691 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A0750D1B55F848000AC691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8E5EB081B5D3C620053F662 /* SocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketViewController.h; sourceTree = "<group>"; };
+		C8E5EB091B5D3C620053F662 /* SocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketViewController.m; sourceTree = "<group>"; };
 		C8EDDFF41B576E7500BD791A /* CZSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZSearchResult.h; sourceTree = "<group>"; };
 		C8EDDFF51B576E7500BD791A /* CZSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZSearchResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,20 +100,10 @@
 		C8A074F11B55F847000AC691 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C8E5EB061B5D3A630053F662 /* UIViewController */,
 				C8ED237B1B57585E00772367 /* other */,
-				C831CE3E1B56026300C3AFD4 /* ViewController.h */,
-				C831CE3F1B56026300C3AFD4 /* ViewController.m */,
-				C831CE411B56026E00C3AFD4 /* MainViewController.h */,
-				C831CE421B56026E00C3AFD4 /* MainViewController.m */,
-				C831CE4C1B56217800C3AFD4 /* SmsViewController.h */,
-				C831CE4D1B56217800C3AFD4 /* SmsViewController.m */,
-				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
-				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
-				C8EDDFF41B576E7500BD791A /* CZSearchResult.h */,
-				C8EDDFF51B576E7500BD791A /* CZSearchResult.m */,
-				C831CE521B56330E00C3AFD4 /* SearchViewController.h */,
-				C831CE531B56330E00C3AFD4 /* SearchViewController.m */,
+				C8E5EB071B5D3AE20053F662 /* Socket */,
+				C8E5EB061B5D3A630053F662 /* UIViewController */,
+				C8E5EB0E1B5D3DE70053F662 /* Store */,
 				C831CE3C1B56019400C3AFD4 /* Main.storyboard */,
 				C8A075011B55F847000AC691 /* LaunchScreen.xib */,
 				C89258FE1B5B6E89006F6A62 /* Images.xcassets */,
@@ -150,6 +143,34 @@
 			children = (
 			);
 			name = UIViewController;
+			sourceTree = "<group>";
+		};
+		C8E5EB071B5D3AE20053F662 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				C8E5EB081B5D3C620053F662 /* SocketViewController.h */,
+				C8E5EB091B5D3C620053F662 /* SocketViewController.m */,
+			);
+			name = Socket;
+			sourceTree = "<group>";
+		};
+		C8E5EB0E1B5D3DE70053F662 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				C831CE3E1B56026300C3AFD4 /* ViewController.h */,
+				C831CE3F1B56026300C3AFD4 /* ViewController.m */,
+				C831CE411B56026E00C3AFD4 /* MainViewController.h */,
+				C831CE421B56026E00C3AFD4 /* MainViewController.m */,
+				C831CE4C1B56217800C3AFD4 /* SmsViewController.h */,
+				C831CE4D1B56217800C3AFD4 /* SmsViewController.m */,
+				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
+				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
+				C8EDDFF41B576E7500BD791A /* CZSearchResult.h */,
+				C8EDDFF51B576E7500BD791A /* CZSearchResult.m */,
+				C831CE521B56330E00C3AFD4 /* SearchViewController.h */,
+				C831CE531B56330E00C3AFD4 /* SearchViewController.m */,
+			);
+			name = Store;
 			sourceTree = "<group>";
 		};
 		C8ED237B1B57585E00772367 /* other */ = {
@@ -268,6 +289,7 @@
 				C831CE511B5632CC00C3AFD4 /* SearchResultsViewController.m in Sources */,
 				C831CE431B56026E00C3AFD4 /* MainViewController.m in Sources */,
 				C8EDDFF61B576E7500BD791A /* CZSearchResult.m in Sources */,
+				C8E5EB0A1B5D3C620053F662 /* SocketViewController.m in Sources */,
 				C831CE491B56028F00C3AFD4 /* AppDelegate.m in Sources */,
 				C831CE541B56330E00C3AFD4 /* SearchViewController.m in Sources */,
 			);
