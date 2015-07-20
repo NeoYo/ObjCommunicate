@@ -97,22 +97,10 @@
 		C8A074F11B55F847000AC691 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C8E5EAE81B5D08060053F662 /* Socket */,
+				C8E5EAE71B5D06DF0053F662 /* View */,
+				C8E5EAE61B5D06990053F662 /* UIViewController */,
 				C8ED237B1B57585E00772367 /* other */,
-				C831CE3E1B56026300C3AFD4 /* ViewController.h */,
-				C831CE3F1B56026300C3AFD4 /* ViewController.m */,
-				C831CE411B56026E00C3AFD4 /* MainViewController.h */,
-				C831CE421B56026E00C3AFD4 /* MainViewController.m */,
-				C831CE4C1B56217800C3AFD4 /* SmsViewController.h */,
-				C831CE4D1B56217800C3AFD4 /* SmsViewController.m */,
-				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
-				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
-				C8EDDFF41B576E7500BD791A /* CZSearchResult.h */,
-				C8EDDFF51B576E7500BD791A /* CZSearchResult.m */,
-				C831CE521B56330E00C3AFD4 /* SearchViewController.h */,
-				C831CE531B56330E00C3AFD4 /* SearchViewController.m */,
-				C831CE3C1B56019400C3AFD4 /* Main.storyboard */,
-				C8A075011B55F847000AC691 /* LaunchScreen.xib */,
-				C89258FE1B5B6E89006F6A62 /* Images.xcassets */,
 				C8A074F21B55F847000AC691 /* Supporting Files */,
 			);
 			path = UI;
@@ -142,6 +130,42 @@
 				C8A0750D1B55F848000AC691 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8E5EAE61B5D06990053F662 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C831CE3E1B56026300C3AFD4 /* ViewController.h */,
+				C831CE3F1B56026300C3AFD4 /* ViewController.m */,
+				C831CE411B56026E00C3AFD4 /* MainViewController.h */,
+				C831CE421B56026E00C3AFD4 /* MainViewController.m */,
+				C831CE4C1B56217800C3AFD4 /* SmsViewController.h */,
+				C831CE4D1B56217800C3AFD4 /* SmsViewController.m */,
+				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
+				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
+				C8EDDFF41B576E7500BD791A /* CZSearchResult.h */,
+				C8EDDFF51B576E7500BD791A /* CZSearchResult.m */,
+				C831CE521B56330E00C3AFD4 /* SearchViewController.h */,
+				C831CE531B56330E00C3AFD4 /* SearchViewController.m */,
+			);
+			name = UIViewController;
+			sourceTree = "<group>";
+		};
+		C8E5EAE71B5D06DF0053F662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C831CE3C1B56019400C3AFD4 /* Main.storyboard */,
+				C8A075011B55F847000AC691 /* LaunchScreen.xib */,
+				C89258FE1B5B6E89006F6A62 /* Images.xcassets */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C8E5EAE81B5D08060053F662 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Socket;
 			sourceTree = "<group>";
 		};
 		C8ED237B1B57585E00772367 /* other */ = {
