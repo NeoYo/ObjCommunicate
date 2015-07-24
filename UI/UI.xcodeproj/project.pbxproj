@@ -138,9 +138,29 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C8E585C31B61EC4900FA3950 /* InitialView */ = {
+			isa = PBXGroup;
+			children = (
+				C831CE3E1B56026300C3AFD4 /* ViewController.h */,
+				C831CE3F1B56026300C3AFD4 /* ViewController.m */,
+			);
+			name = InitialView;
+			sourceTree = "<group>";
+		};
+		C8E585C41B61EC6300FA3950 /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
+				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
+			);
+			name = SearchResult;
+			sourceTree = "<group>";
+		};
 		C8E5EB061B5D3A630053F662 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C8E585C41B61EC6300FA3950 /* SearchResult */,
+				C8E585C31B61EC4900FA3950 /* InitialView */,
 			);
 			name = UIViewController;
 			sourceTree = "<group>";
@@ -157,14 +177,10 @@
 		C8E5EB0E1B5D3DE70053F662 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				C831CE3E1B56026300C3AFD4 /* ViewController.h */,
-				C831CE3F1B56026300C3AFD4 /* ViewController.m */,
 				C831CE411B56026E00C3AFD4 /* MainViewController.h */,
 				C831CE421B56026E00C3AFD4 /* MainViewController.m */,
 				C831CE4C1B56217800C3AFD4 /* SmsViewController.h */,
 				C831CE4D1B56217800C3AFD4 /* SmsViewController.m */,
-				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
-				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
 				C8EDDFF41B576E7500BD791A /* CZSearchResult.h */,
 				C8EDDFF51B576E7500BD791A /* CZSearchResult.m */,
 				C831CE521B56330E00C3AFD4 /* SearchViewController.h */,
