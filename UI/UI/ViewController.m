@@ -38,9 +38,6 @@
 }
 
 - (IBAction)logIn:(id)sender {
-    //手工启动切换,用户输完密码后想直接登录，优化用户体验
-    [self performSegueWithIdentifier:@"toMainView" sender:self];
-    
     NSString *logInfo=[NSString stringWithFormat:@"%@",self.studentID.text];
     NSString *docDir=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSString *logInfoFile=[docDir stringByAppendingPathComponent:@"logInfo.csv"];
@@ -55,7 +52,12 @@
     [fileHandleWrite writeData:[logInfo dataUsingEncoding:NSUTF8StringEncoding]];
     [fileHandleWrite closeFile];
     //测试
-    [self chaxun];
+    //[self chaxun];
+    
+    
+    //手工启动切换,用户输完密码后想直接登录，优化用户体验
+    [self performSegueWithIdentifier:@"toMainView" sender:self];
+    
 }
 
 
@@ -86,6 +88,8 @@
     }
 }
 
+
+#pragma mark TCP Socket
 //测试Tcp通信
 -(void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode{
     NSLog(@"%@",aStream);
@@ -137,9 +141,10 @@
     inputStream.delegate = self;
     outputStream.delegate = self;
     
-    [inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-    [outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-    
+//    [inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+//    [outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    [outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     [inputStream open];
     [outputStream open];
 }
@@ -171,6 +176,7 @@
     
     NSLog(@"%@",str);
 }
+
 - (void)chaxun{
     /*
      注意：需要用不同的变量
