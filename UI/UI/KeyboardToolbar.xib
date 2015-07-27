@@ -11,13 +11,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
             <items>
                 <barButtonItem style="plain" systemItem="flexibleSpace" id="aQD-Kj-zbC"/>
-                <barButtonItem title="Next" id="cNU-hq-8Ti">
-                    <connections>
-                        <action selector="itemBtnClicked:" destination="YCC-LT-MOB" id="hym-cz-mjU"/>
-                    </connections>
+                <barButtonItem style="plain" id="QH2-H6-Udg">
+                    <button key="customView" opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uVD-UY-SF9">
+                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="点我" backgroundImage="btn_normal">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <state key="highlighted" backgroundImage="btn_hight"/>
+                        <connections>
+                            <action selector="itemBtnClicked:" destination="YCC-LT-MOB" eventType="touchUpInside" id="1Rv-9Y-fkr"/>
+                        </connections>
+                    </button>
                 </barButtonItem>
             </items>
             <point key="canvasLocation" x="321" y="348"/>
         </toolbar>
     </objects>
+    <resources>
+        <image name="btn_hight" width="87" height="44"/>
+        <image name="btn_normal" width="87" height="44"/>
+    </resources>
 </document>
