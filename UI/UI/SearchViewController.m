@@ -21,14 +21,22 @@
 @property (assign,nonatomic) NSInteger selectedCanteen;
 @property (strong,nonatomic) UIDatePicker *datePicker;
 @property (strong,nonatomic) UIAlertView *alert;
+
+//测试能否正确判断
 - (IBAction)startSearch:(id)sender;
+//测试能否正常进入下一个页面
+
+
 @end
 
 
 @implementation SearchViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    //测试：
+    self.navigationController.navigationBarHidden=YES;
+    
     canteens=@[@"全部",@"荔山餐厅",@"实验餐厅",@"荔天餐厅",@"听荔教工餐厅",@"文山湖餐厅",@"凯风清真餐厅",@"老西南(晨风餐厅)",@"小西南餐厅",@"文科楼西北谷餐厅",@"南区饭堂"];
     self.selectedCanteen=0;
     
@@ -165,16 +173,21 @@
 
 #pragma mark 按下开始查询的按钮
 - (IBAction)startSearch:(id)sender {
-    if([self.fromDate.text isEqual:@""]){
-        [self showAlertView:0];
-    }else if(!self.selectedCanteen){
-        [self showAlertView:1];
-    }else{
-        [self setSendStrFromDate:self.fromDate.text];
-        [self setSendStrToDate:self.toDate.text];
-        [self setSendStrLocation:self.selectedCanteen];
-    }
+//    if([self.fromDate.text isEqual:@""]){
+//        [self showAlertView:0];
+//    }else if(!self.selectedCanteen){
+//        [self showAlertView:1];
+//    }else{
+//        [self setSendStrFromDate:self.fromDate.text];
+//        [self setSendStrToDate:self.toDate.text];
+//        [self setSendStrLocation:self.selectedCanteen];
+//       
+//        
+//      //  [self performSegueWithIdentifier:@"toSearchResults" sender:nil];
+//    }
 }
+
+
 
 
 //这个方法用于对alertView的优化，避免多次创建alertView,减少代码量
@@ -222,10 +235,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)exitToHere:(UIStoryboardSegue *)sender{
-    //Execute this code upon unwinding
-}
-
-
-
 @end

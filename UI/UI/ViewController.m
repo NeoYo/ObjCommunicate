@@ -56,7 +56,7 @@
     
     
     //手工启动切换,用户输完密码后想直接登录，优化用户体验
-    [self performSegueWithIdentifier:@"toMainView" sender:self];
+    [self performSegueWithIdentifier:@"toMainView" sender:nil];
     
 }
 

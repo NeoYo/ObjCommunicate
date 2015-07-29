@@ -9,5 +9,5 @@
 #import "ViewController.h"
 
 @interface SearchViewController : ViewController
--(IBAction)exitToHere:(UIStoryboardSegue *)sender;
+
 @end

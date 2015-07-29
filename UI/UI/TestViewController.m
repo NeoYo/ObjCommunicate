@@ -1,18 +1,18 @@
 //
-//  MainViewController.m
+//  TestViewController.m
 //  UI
 //
-//  Created by WeixiYu on 15/7/14.
+//  Created by WeixiYu on 15/7/29.
 //  Copyright (c) 2015年 liveabean. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "TestViewController.h"
 
-@interface MainViewController ()
+@interface TestViewController ()
 
 @end
 
-@implementation MainViewController
+@implementation TestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
