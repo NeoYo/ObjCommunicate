@@ -33,8 +33,7 @@
 @implementation SearchViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    //测试：
+    
     self.navigationController.navigationBarHidden=YES;
     
     canteens=@[@"全部",@"荔山餐厅",@"实验餐厅",@"荔天餐厅",@"听荔教工餐厅",@"文山湖餐厅",@"凯风清真餐厅",@"老西南(晨风餐厅)",@"小西南餐厅",@"文科楼西北谷餐厅",@"南区饭堂"];
@@ -148,24 +147,25 @@
     
     return canteens[row];
 }
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
-    UILabel *label=(UILabel *)view;
-    if (!label) {
-        label = [[UILabel alloc] init];
-    }
-    label.text = canteens[row];
-    label.font=[UIFont fontWithName:@"STHeiti-Medium.ttc" size:50];
-    label.textAlignment=NSTextAlignmentCenter;
-    return label;
-}
+//自定义不需要
+//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+//    UILabel *label=(UILabel *)view;
+//    if (!label) {
+//        label = [[UILabel alloc] init];
+//    }
+//    label.text = canteens[row];
+//    label.font=[UIFont fontWithName:@"STHeiti-Medium.ttc" size:50];
+//    label.textAlignment=NSTextAlignmentCenter;
+//    return label;
+//}
 #pragma mark height
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-    return 45;
+    return 40;
 }
 #pragma mark selectedLocation
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     self.selectedCanteen=row;
-    NSLog(@"location:%@",canteens[self.selectedCanteen]);
+//    NSLog(@"location:%@",canteens[self.selectedCanteen]);
     
 //    测试：[self setSendStrLocation:[NSString stringWithFormat:@"%ld",(long)self.selectedCanteen]];
 }

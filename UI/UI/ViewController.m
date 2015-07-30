@@ -89,6 +89,8 @@
 }
 
 
+
+
 #pragma mark TCP Socket
 //测试Tcp通信
 -(void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode{

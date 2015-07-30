@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pfy-eu-4kg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xYI-k1-CEd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -107,7 +107,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6k-Mz-GsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1041" y="337"/>
+            <point key="canvasLocation" x="-1065" y="337"/>
         </scene>
         <!--Search-->
         <scene sceneID="tIm-eF-Wga">
@@ -151,7 +151,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="53" y="301" width="60" height="22"/>
+                                    <rect key="frame" x="42" y="301" width="60" height="22"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="开始时间：" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aZT-pT-vle">
@@ -187,7 +187,7 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GV3-1S-77w">
                                 <rect key="frame" x="115" y="219" width="136" height="96"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="121" y="264" width="136" height="96"/>
+                                    <rect key="frame" x="96" y="283" width="187" height="58"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="pfy-eu-4kg" id="aqn-sx-2r6"/>
@@ -233,45 +233,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugk-nc-WsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-432" y="337"/>
+            <point key="canvasLocation" x="-484.5" y="337"/>
         </scene>
-        <!--SearchResults-->
-        <scene sceneID="jwW-Xa-E7t">
-            <objects>
-                <viewController title="SearchResults" id="mPp-Gf-GfI" userLabel="SearchResults" customClass="SearchResultsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="k1u-bI-xwL"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZnI-k0-dcB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Y1D-S4-bCY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b9c-oj-B41" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="195" y="344"/>
-        </scene>
-        <!--View Controller-->
+        <!--Search Results View Controller-->
         <scene sceneID="viZ-Ox-mol">
             <objects>
-                <viewController id="YLl-ij-iXc" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7Tn-XE-hdp"/>
-                        <viewControllerLayoutGuide type="bottom" id="XY4-yp-vcv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Q0A-bt-o72">
+                <viewController id="YLl-ij-iXc" customClass="SearchResultsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mFK-ko-7RT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <connections>
+                            <outlet property="dataSource" destination="YLl-ij-iXc" id="Idm-7H-fr9"/>
+                            <outlet property="delegate" destination="YLl-ij-iXc" id="WCn-vL-GLJ"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="E3X-TY-ygC"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yms-di-lNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-192" y="1082"/>
+            <point key="canvasLocation" x="151.5" y="337"/>
         </scene>
         <!--Setting-->
         <scene sceneID="tmi-yb-vdC">
@@ -292,6 +274,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxY-dO-mbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1017" y="1054"/>
+        </scene>
+        <!--Test Data View Controller-->
+        <scene sceneID="B9z-FQ-fcM">
+            <objects>
+                <viewController id="xYI-k1-CEd" customClass="TestDataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tjO-Jp-QrP"/>
+                        <viewControllerLayoutGuide type="bottom" id="1NA-mJ-FOQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D4b-S2-Aef">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WpT-Dz-nOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-346.5" y="1010"/>
         </scene>
         <!--Sms-->
         <scene sceneID="zAs-O1-BkP">
