@@ -13,8 +13,8 @@
 @interface Record : NSManagedObject
 
 @property (nonatomic, retain) NSString * date;
-@property (nonatomic, retain) NSString * time;
-@property (nonatomic, retain) NSString * money;
 @property (nonatomic, retain) NSString * location;
+@property (nonatomic, retain) NSString * money;
+@property (nonatomic, retain) NSString * time;
 
 @end

@@ -14,13 +14,15 @@
 		C831CE4B1B56036900C3AFD4 /* UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE4A1B56036900C3AFD4 /* UITests.m */; };
 		C831CE511B5632CC00C3AFD4 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */; };
 		C831CE541B56330E00C3AFD4 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE531B56330E00C3AFD4 /* SearchViewController.m */; };
+		C83204EF1B6B0E09009DC1C2 /* RecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C83204ED1B6B0E09009DC1C2 /* RecordCell.m */; };
+		C83204F01B6B0E09009DC1C2 /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C83204EE1B6B0E09009DC1C2 /* RecordCell.xib */; };
+		C83204F41B6B1C38009DC1C2 /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C83204F31B6B1C38009DC1C2 /* RecordModel.m */; };
+		C854E8231B6A711200323A65 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = C854E8221B6A711200323A65 /* Record.m */; };
 		C87302FA1B65ED5300DADCA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C87302F91B65ED5300DADCA7 /* Images.xcassets */; };
-		C892C2771B68A8FF00D3EC49 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C892C2761B68A8FF00D3EC49 /* TestViewController.m */; };
 		C8A074F51B55F847000AC691 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A074F41B55F847000AC691 /* main.m */; };
 		C8A075031B55F847000AC691 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A075011B55F847000AC691 /* LaunchScreen.xib */; };
 		C8B9EB6A1B6A0863002708CE /* Records.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8B9EB681B6A0863002708CE /* Records.xcdatamodeld */; };
 		C8B9EB6D1B6A08E8002708CE /* TestDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B9EB6C1B6A08E8002708CE /* TestDataViewController.m */; };
-		C8B9EB701B6A0DF7002708CE /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B9EB6F1B6A0DF7002708CE /* Record.m */; };
 		C8E5EB0A1B5D3C620053F662 /* SocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E5EB091B5D3C620053F662 /* SocketViewController.m */; };
 		C8F64C261B6515D300FBF2D5 /* KeyboardToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8F64C251B6515D300FBF2D5 /* KeyboardToolbar.xib */; };
 		C8F64C291B65162D00FBF2D5 /* KeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F64C281B65162D00FBF2D5 /* KeyboardToolbar.m */; };
@@ -47,9 +49,14 @@
 		C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		C831CE521B56330E00C3AFD4 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		C831CE531B56330E00C3AFD4 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		C83204EC1B6B0E09009DC1C2 /* RecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCell.h; sourceTree = "<group>"; };
+		C83204ED1B6B0E09009DC1C2 /* RecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordCell.m; sourceTree = "<group>"; };
+		C83204EE1B6B0E09009DC1C2 /* RecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
+		C83204F21B6B1C38009DC1C2 /* RecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordModel.h; sourceTree = "<group>"; };
+		C83204F31B6B1C38009DC1C2 /* RecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordModel.m; sourceTree = "<group>"; };
+		C854E8211B6A711200323A65 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
+		C854E8221B6A711200323A65 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		C87302F91B65ED5300DADCA7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C892C2751B68A8FF00D3EC49 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		C892C2761B68A8FF00D3EC49 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		C8A074EF1B55F847000AC691 /* UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A074F31B55F847000AC691 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8A074F41B55F847000AC691 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,8 +66,6 @@
 		C8B9EB691B6A0863002708CE /* Records.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Records.xcdatamodel; sourceTree = "<group>"; };
 		C8B9EB6B1B6A08E8002708CE /* TestDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataViewController.h; sourceTree = "<group>"; };
 		C8B9EB6C1B6A08E8002708CE /* TestDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataViewController.m; sourceTree = "<group>"; };
-		C8B9EB6E1B6A0DF7002708CE /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record.h; sourceTree = "<group>"; };
-		C8B9EB6F1B6A0DF7002708CE /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Record.m; sourceTree = "<group>"; };
 		C8E5EB081B5D3C620053F662 /* SocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketViewController.h; sourceTree = "<group>"; };
 		C8E5EB091B5D3C620053F662 /* SocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketViewController.m; sourceTree = "<group>"; };
 		C8F64C251B6515D300FBF2D5 /* KeyboardToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardToolbar.xib; sourceTree = "<group>"; };
@@ -86,6 +91,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C83204F11B6B143E009DC1C2 /* RecordCell */ = {
+			isa = PBXGroup;
+			children = (
+				C83204EC1B6B0E09009DC1C2 /* RecordCell.h */,
+				C83204ED1B6B0E09009DC1C2 /* RecordCell.m */,
+				C83204EE1B6B0E09009DC1C2 /* RecordCell.xib */,
+			);
+			name = RecordCell;
+			sourceTree = "<group>";
+		};
+		C854E81B1B6A568400323A65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C8B9EB681B6A0863002708CE /* Records.xcdatamodeld */,
+				C854E8211B6A711200323A65 /* Record.h */,
+				C854E8221B6A711200323A65 /* Record.m */,
+				C8B9EB6B1B6A08E8002708CE /* TestDataViewController.h */,
+				C8B9EB6C1B6A08E8002708CE /* TestDataViewController.m */,
+				C83204F21B6B1C38009DC1C2 /* RecordModel.h */,
+				C83204F31B6B1C38009DC1C2 /* RecordModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		C8A074E61B55F847000AC691 = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +136,12 @@
 		C8A074F11B55F847000AC691 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C854E81B1B6A568400323A65 /* Model */,
 				C8ED237B1B57585E00772367 /* other */,
 				C8E5EB071B5D3AE20053F662 /* Socket */,
 				C8E5EB061B5D3A630053F662 /* UIViewController */,
 				C831CE3C1B56019400C3AFD4 /* Main.storyboard */,
 				C8A075011B55F847000AC691 /* LaunchScreen.xib */,
-				C8B9EB681B6A0863002708CE /* Records.xcdatamodeld */,
-				C8B9EB6E1B6A0DF7002708CE /* Record.h */,
-				C8B9EB6F1B6A0DF7002708CE /* Record.m */,
 				C8A074F21B55F847000AC691 /* Supporting Files */,
 			);
 			path = UI;
@@ -161,6 +188,7 @@
 			children = (
 				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
 				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
+				C83204F11B6B143E009DC1C2 /* RecordCell */,
 			);
 			name = SearchResult;
 			sourceTree = "<group>";
@@ -171,10 +199,6 @@
 				C8F64C211B64C61700FBF2D5 /* Search */,
 				C8E585C41B61EC6300FA3950 /* SearchResult */,
 				C8E585C31B61EC4900FA3950 /* InitialView */,
-				C892C2751B68A8FF00D3EC49 /* TestViewController.h */,
-				C892C2761B68A8FF00D3EC49 /* TestViewController.m */,
-				C8B9EB6B1B6A08E8002708CE /* TestDataViewController.h */,
-				C8B9EB6C1B6A08E8002708CE /* TestDataViewController.m */,
 			);
 			name = UIViewController;
 			sourceTree = "<group>";
@@ -297,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83204F01B6B0E09009DC1C2 /* RecordCell.xib in Resources */,
 				C831CE3B1B56017800C3AFD4 /* Info.plist in Resources */,
 				C87302FA1B65ED5300DADCA7 /* Images.xcassets in Resources */,
 				C831CE3D1B56019400C3AFD4 /* Main.storyboard in Resources */,
@@ -319,16 +344,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83204F41B6B1C38009DC1C2 /* RecordModel.m in Sources */,
 				C831CE401B56026300C3AFD4 /* ViewController.m in Sources */,
 				C8A074F51B55F847000AC691 /* main.m in Sources */,
 				C831CE511B5632CC00C3AFD4 /* SearchResultsViewController.m in Sources */,
 				C8B9EB6A1B6A0863002708CE /* Records.xcdatamodeld in Sources */,
 				C8B9EB6D1B6A08E8002708CE /* TestDataViewController.m in Sources */,
 				C8E5EB0A1B5D3C620053F662 /* SocketViewController.m in Sources */,
-				C8B9EB701B6A0DF7002708CE /* Record.m in Sources */,
+				C83204EF1B6B0E09009DC1C2 /* RecordCell.m in Sources */,
+				C854E8231B6A711200323A65 /* Record.m in Sources */,
 				C8F64C291B65162D00FBF2D5 /* KeyboardToolbar.m in Sources */,
 				C831CE491B56028F00C3AFD4 /* AppDelegate.m in Sources */,
-				C892C2771B68A8FF00D3EC49 /* TestViewController.m in Sources */,
 				C831CE541B56330E00C3AFD4 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

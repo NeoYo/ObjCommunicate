@@ -12,8 +12,25 @@
 @implementation Record
 
 @dynamic date;
-@dynamic time;
-@dynamic money;
 @dynamic location;
-
+@dynamic money;
+@dynamic time;
+//-(void)setRec:(NSString *)receiveStr{
+//    
+////    Record *record=[NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:self.context];
+//    
+//    NSArray *receiveArr=[receiveStr componentsSeparatedByString:NSLocalizedString(@"-", nil)];
+//    record.date=receiveArr[1];
+//    record.time=receiveArr[2];
+//    record.location=receiveArr[4];
+//    
+//    NSError *error=nil;
+//    [self.context save:&error];
+//    if (!error) {
+//        NSLog(@"success");
+//    }else{
+//        NSLog(@"%@",error);
+//    }
+//    
+//}
 @end

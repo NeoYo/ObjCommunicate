@@ -26,7 +26,7 @@
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self setupContext];
-    [self addRecord];
+    [self addRecordWithReceiveRecord:@"cha-2015/7/16-20:36:28-9-2"];
 }
 -(void)setupContext{
     NSManagedObjectContext *context=[[NSManagedObjectContext alloc]init];
@@ -36,19 +36,19 @@
     NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
     NSLog(@"%@",doc);
     NSString *sqlitePath=[doc stringByAppendingString:@"/record.db"];
-    NSLog(@"%@",sqlitePath);
     [store addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:sqlitePath] options:nil error:&error];
     context.persistentStoreCoordinator=store;
     self.context=context;
 }
--(void)addRecord{
-    for (int i=0; i<10; i++) {
+-(void)addRecordWithReceiveRecord:(NSString *)receiveStr{
+
         Record *record=[NSEntityDescription insertNewObjectForEntityForName:@"Record" inManagedObjectContext:self.context];
         
-        record.time=@"9";
-        record.date=[NSString stringWithFormat:@"%@",[NSDate date]];
-        record.location=@"szu";
-        record.money=[NSString stringWithFormat:@"10%d",i];
+    NSArray *receiveArr=[receiveStr componentsSeparatedByString:NSLocalizedString(@"-", nil)];
+    record.date=receiveArr[1];
+    record.time=receiveArr[2];
+     record.location=receiveArr[4];
+
         NSError *error=nil;
         [self.context save:&error];
         if (!error) {
@@ -56,7 +56,7 @@
         }else{
             NSLog(@"%@",error);
         }
-    }
+
 }
 /*
 #pragma mark - Navigation

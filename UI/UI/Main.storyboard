@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xYI-k1-CEd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -222,7 +222,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="nlH-wr-kWd">
-                        <barButtonItem key="backBarButtonItem" title="返回" id="ZJ9-dF-Bld"/>
+                        <barButtonItem key="backBarButtonItem" title="查询" id="3M5-83-mNt"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="-484.5" y="337"/>
         </scene>
-        <!--Search Results View Controller-->
+        <!--SearchResults-->
         <scene sceneID="viZ-Ox-mol">
             <objects>
-                <viewController id="YLl-ij-iXc" customClass="SearchResultsViewController" sceneMemberID="viewController">
+                <viewController id="YLl-ij-iXc" userLabel="SearchResults" customClass="SearchResultsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mFK-ko-7RT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -248,8 +248,13 @@
                             <outlet property="delegate" destination="YLl-ij-iXc" id="WCn-vL-GLJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="E3X-TY-ygC"/>
+                    <navigationItem key="navigationItem" title="消费记录" id="E3X-TY-ygC">
+                        <barButtonItem key="backBarButtonItem" title="查询" id="5hv-bv-KQJ"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableVIew" destination="mFK-ko-7RT" id="l39-K1-KQ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yms-di-lNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -284,6 +289,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1NA-mJ-FOQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D4b-S2-Aef">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -291,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WpT-Dz-nOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346.5" y="1010"/>
+            <point key="canvasLocation" x="-283" y="1234"/>
         </scene>
         <!--Sms-->
         <scene sceneID="zAs-O1-BkP">

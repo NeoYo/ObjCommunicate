@@ -25,8 +25,6 @@
 //测试能否正确判断
 - (IBAction)startSearch:(id)sender;
 //测试能否正常进入下一个页面
-
-
 @end
 
 
@@ -71,7 +69,7 @@
 
 
 #pragma mark sendStr 的方法 
-// sendStr----chaxun:2012160063:2015/7/16:2015/7/19:1
+// sendStr----chaxun-2012160063-2015/7/16-2015/7/19-1
 // sendArr----  0      1           2       3       4
 -(void)setSendStrFromDate:(NSString *)str{
     [self replaceSendStrAt:2 withStr:str];
@@ -87,7 +85,7 @@
     ///采用这种方式 而不是-(void) replaceCharactersInRange:range withString:nsstring使用nsstring替换range指定的字符
     //原因是：时间的长度不一定，比如2015/7/12 和 2015/11/12 而且这种提高服用性
     NSString *send = [NSString stringWithFormat:@"%@",sendStr];
-    NSArray *sendArr = [send componentsSeparatedByString:NSLocalizedString(@":", nil)]; //NSString可以转换成NSArray
+    NSArray *sendArr = [send componentsSeparatedByString:NSLocalizedString(@"-", nil)]; //NSString可以转换成NSArray
     [sendStr setString:@""];
     for (int i=0; i<sendArr.count; i++) {
         [sendStr appendFormat:@"%@:",i==index?str:sendArr[i]];

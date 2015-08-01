@@ -7,6 +7,7 @@
 //
 
 #import "SearchResultsViewController.h"
+#import "RecordCell.h"
 
 @interface SearchResultsViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableVIew;
@@ -17,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableVIew.rowHeight=60;
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -47,52 +49,61 @@
 }
 //TableViewCell
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
-   
+    RecordCell *cell=[RecordCell recordCellWithTableView:tableView];
     //section 0
     if (indexPath.section==0) {
-        if (indexPath.row==0) {
-            cell.textLabel.text=@"荔园超市";
-            cell.detailTextLabel.text=@"2014.10.12";
-            cell.imageView.image=[UIImage imageNamed:@"174074057446.png"];
-        } else if(indexPath.row==1){
-            cell.textLabel.text=@"南区超市";
-            cell.detailTextLabel.text=@"2014.10.12";
-            cell.imageView.image=[UIImage imageNamed:@"173890450691.png"];
-        } else{
-            cell.textLabel.text=@"南区超市";
-            cell.imageView.image=[UIImage imageNamed:@"173890255948.png"];
-            cell.detailTextLabel.text=@"2014.10.12";
-        }
+//        if (indexPath.row==0) {
+//            cell.textLabel.text=@"荔园超市";
+//            cell.detailTextLabel.text=@"2014.10.12";
+//            cell.imageView.image=[UIImage imageNamed:@"174074057446.png"];
+//        } else if(indexPath.row==1){
+//            cell.textLabel.text=@"南区超市";
+//            cell.detailTextLabel.text=@"2014.10.12";
+//            cell.imageView.image=[UIImage imageNamed:@"173890450691.png"];
+//        } else{
+//            cell.textLabel.text=@"南区超市";
+//            cell.imageView.image=[UIImage imageNamed:@"173890255948.png"];
+//            cell.detailTextLabel.text=@"2014.10.12";
+//        }
+        
+//        [cell setRecordCell:<#(Record *)#>]
+        cell.location.image=[UIImage imageNamed:@"canteen.jpg"];
     //section 1
     } else if(indexPath.section==1) {
-        if (indexPath.row==0) {
-            cell.textLabel.text=@"荔园超市";
-            cell.detailTextLabel.text=@"2014.11.12";
-        } else if(indexPath.row==1){
-            cell.textLabel.text=@"南区超市";
-            cell.detailTextLabel.text=@"2014.11.12";
-        } else{
-            cell.textLabel.text=@"南区大酒店";
-            cell.detailTextLabel.text=@"2014.11.12";
-        }
+//        if (indexPath.row==0) {
+//            cell.textLabel.text=@"荔园超市";
+//            cell.detailTextLabel.text=@"2014.11.12";
+//        } else if(indexPath.row==1){
+//            cell.textLabel.text=@"南区超市";
+//            cell.detailTextLabel.text=@"2014.11.12";
+//        } else{
+//            cell.textLabel.text=@"南区大酒店";
+//            cell.detailTextLabel.text=@"2014.11.12";
+//        }
+        
+        
+        
     }
     //section2
     else {
-        if (indexPath.row==0) {
-            cell.textLabel.text=@"荔园超市";
-            cell.detailTextLabel.text=@"2014.12.12";
-        } else if(indexPath.row==1){
-            cell.textLabel.text=@"南区超市";
-            cell.detailTextLabel.text=@"2014.12.12";
-        } else{
-            cell.textLabel.text=@"南区大酒店";
-            cell.detailTextLabel.text=@"2014.12.12";
-        }
+//        if (indexPath.row==0) {
+//            cell.textLabel.text=@"荔园超市";
+//            cell.detailTextLabel.text=@"2014.12.12";
+//        } else if(indexPath.row==1){
+//            cell.textLabel.text=@"南区超市";
+//            cell.detailTextLabel.text=@"2014.12.12";
+//        } else{
+//            cell.textLabel.text=@"南区大酒店";
+//            cell.detailTextLabel.text=@"2014.12.12";
+//        }
+        
+        
+        
     }
     
     return cell;
 }
+
 
 //分组头标题
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

@@ -87,11 +87,11 @@
         return nil;
     }
 }
+#pragma mark TcpAsyncSocket
 
 
 
-
-#pragma mark TCP Socket
+#pragma mark TCP Socket C语言
 //测试Tcp通信
 -(void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode{
     NSLog(@"%@",aStream);
