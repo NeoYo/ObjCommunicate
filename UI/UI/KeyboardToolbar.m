@@ -30,6 +30,4 @@
         [self.kbDelegate keyboardToolbar:self itemDidSelected:sender];
     }
 }
-
-
 @end

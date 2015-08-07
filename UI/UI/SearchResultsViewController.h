@@ -9,5 +9,5 @@
 #import "ViewController.h"
 
 @interface SearchResultsViewController : ViewController
-
+@property (nonatomic,copy) NSString *sendStr;
 @end

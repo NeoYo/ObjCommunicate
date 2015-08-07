@@ -7,20 +7,25 @@
 //
 
 #import "SearchViewController.h"
+#import "GCDAsyncSocket.h"
 #import "KeyboardToolbar.h"
+#import "SearchResultsViewController.h"
 
 @interface SearchViewController ()<UIPickerViewDataSource,UIPickerViewDelegate,KeyboardDelegate,UIAlertViewDelegate>{
     NSArray *canteens;
     NSMutableString *sendStr;
     NSString *receiveStr;
     NSDateFormatter *dateFormat;
+    GCDAsyncSocket *socket;;
 }
+//UIView
 @property (weak, nonatomic) IBOutlet UIPickerView *location;
 @property (weak, nonatomic) IBOutlet UITextField *fromDate;
 @property (weak, nonatomic) IBOutlet UITextField *toDate;
 @property (assign,nonatomic) NSInteger selectedCanteen;
 @property (strong,nonatomic) UIDatePicker *datePicker;
 @property (strong,nonatomic) UIAlertView *alert;
+
 
 //测试能否正确判断
 - (IBAction)startSearch:(id)sender;
@@ -145,17 +150,6 @@
     
     return canteens[row];
 }
-//自定义不需要
-//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
-//    UILabel *label=(UILabel *)view;
-//    if (!label) {
-//        label = [[UILabel alloc] init];
-//    }
-//    label.text = canteens[row];
-//    label.font=[UIFont fontWithName:@"STHeiti-Medium.ttc" size:50];
-//    label.textAlignment=NSTextAlignmentCenter;
-//    return label;
-//}
 #pragma mark height
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
     return 40;
@@ -176,13 +170,22 @@
 //    }else if(!self.selectedCanteen){
 //        [self showAlertView:1];
 //    }else{
-//        [self setSendStrFromDate:self.fromDate.text];
-//        [self setSendStrToDate:self.toDate.text];
-//        [self setSendStrLocation:self.selectedCanteen];
-//       
+        [self setSendStrFromDate:self.fromDate.text];
+        [self setSendStrToDate:self.toDate.text];
+        [self setSendStrLocation:self.selectedCanteen];
+//
 //        
 //      //  [self performSegueWithIdentifier:@"toSearchResults" sender:nil];
 //    }
+}
+#pragma mark 传递查询信息
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"%s",__func__);
+    id destVc=segue.destinationViewController;
+    if ([destVc isKindOfClass:[SearchResultsViewController class]]) {
+        SearchResultsViewController *searchresult =destVc;
+        searchresult.sendStr=sendStr;
+    }
 }
 
 
@@ -228,6 +231,67 @@
         }
     }
 }
+
+
+#pragma mark -GCDAsyncSocket
+-(void)connect{
+    //创建socket
+    socket=[[GCDAsyncSocket alloc]initWithDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+    NSError *error=nil;
+    
+    
+    [socket connectToHost:@"172.31.101.139" onPort:5000 error:&error];
+    if (error) {
+        NSLog(@"%@",error);
+    }
+    
+}
+#pragma mark-GCDAsyncSocketDelegate
+//连接成功
+-(void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port{
+    NSLog(@"%s",__func__);
+}
+//断开连接
+-(void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err{
+    if (err) {
+        NSLog(@"连接失败");
+    } else {
+        NSLog(@"正常断开");
+    }
+}
+//发送成功
+-(void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag{
+    NSLog(@"%s",__func__);
+    //发送成功要有下面这行代码才会调用代理方法 didReadData tag设置发送对应的返回
+    [socket readDataWithTimeout:-1 tag:tag];
+}
+//读取数据
+-(void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
+    //    NSLog(@"%@",[NSThread currentThread]);
+    
+    receiveStr=[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    if (tag==100) {
+        NSLog(@"login:%s_______%@",__func__,receiveStr);
+    } else if(tag==101){
+        NSLog(@"chaxun:%s____%@",__func__,receiveStr);
+    }
+}
+-(void)logIn{
+    [self connect];
+    NSString *loginStr= @"login:2012160063:123456";
+    NSData *data=[loginStr dataUsingEncoding:NSUTF8StringEncoding];
+    [socket writeData:data withTimeout:-1 tag:100];
+}
+- (void)chaxun{
+    /*
+     注意：需要用不同的变量?
+     */
+    [self connect];
+    NSString *searchStr= @"chaxun:2012160063:2015/7/16:2015/7/19";
+    NSData *data2 = [searchStr dataUsingEncoding:NSUTF8StringEncoding];
+    [socket writeData:data2 withTimeout:-1 tag:101];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
