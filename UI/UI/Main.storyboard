@@ -181,7 +181,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="startSearch:" destination="pfy-eu-4kg" eventType="touchUpInside" id="4U3-hQ-g6R"/>
-                                    <segue destination="YLl-ij-iXc" kind="show" id="SdD-Tm-TBb"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GV3-1S-77w">
@@ -229,6 +228,7 @@
                         <outlet property="fromDate" destination="aZT-pT-vle" id="QYU-vQ-BEw"/>
                         <outlet property="location" destination="GV3-1S-77w" id="KjK-Re-HQb"/>
                         <outlet property="toDate" destination="o1J-Cs-GYv" id="UmW-r7-rYe"/>
+                        <segue destination="YLl-ij-iXc" kind="show" identifier="toSearchResults" id="CBd-eo-bEk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ugk-nc-WsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -239,18 +239,17 @@
         <scene sceneID="viZ-Ox-mol">
             <objects>
                 <viewController id="YLl-ij-iXc" userLabel="SearchResults" customClass="SearchResultsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mFK-ko-7RT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="30" sectionFooterHeight="30" id="mFK-ko-7RT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.19215686269999999" green="0.55294117649999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="YLl-ij-iXc" id="Idm-7H-fr9"/>
                             <outlet property="delegate" destination="YLl-ij-iXc" id="WCn-vL-GLJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="消费记录" id="E3X-TY-ygC">
-                        <barButtonItem key="backBarButtonItem" title="查询" id="5hv-bv-KQJ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="消费记录" id="E3X-TY-ygC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableVIew" destination="mFK-ko-7RT" id="l39-K1-KQ4"/>

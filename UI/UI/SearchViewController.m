@@ -36,6 +36,10 @@
 @implementation SearchViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //Test
+    self.fromDate.text=@"2015/1/1";
+    self.toDate.text=@"2015/8/2";
+    self.selectedCanteen=3;
     
     self.navigationController.navigationBarHidden=YES;
     
@@ -74,7 +78,7 @@
 
 
 #pragma mark sendStr 的方法 
-// sendStr----chaxun-2012160063-2015/7/16-2015/7/19-1
+// sendStr----chaxun:2012160063:2015/7/16:2015/7/19:1
 // sendArr----  0      1           2       3       4
 -(void)setSendStrFromDate:(NSString *)str{
     [self replaceSendStrAt:2 withStr:str];
@@ -90,14 +94,14 @@
     ///采用这种方式 而不是-(void) replaceCharactersInRange:range withString:nsstring使用nsstring替换range指定的字符
     //原因是：时间的长度不一定，比如2015/7/12 和 2015/11/12 而且这种提高服用性
     NSString *send = [NSString stringWithFormat:@"%@",sendStr];
-    NSArray *sendArr = [send componentsSeparatedByString:NSLocalizedString(@"-", nil)]; //NSString可以转换成NSArray
+    NSArray *sendArr = [send componentsSeparatedByString:NSLocalizedString(@":", nil)]; //NSString可以转换成NSArray
     [sendStr setString:@""];
     for (int i=0; i<sendArr.count; i++) {
         [sendStr appendFormat:@"%@:",i==index?str:sendArr[i]];
     }
     //sendStr 的末尾多了  @”：“
    [sendStr deleteCharactersInRange:NSMakeRange([sendStr length]-1, 1)];
-    NSLog(@"%@",sendStr);
+//    NSLog(@"%@",sendStr);
 }
 
 
@@ -165,22 +169,20 @@
 
 #pragma mark 按下开始查询的按钮
 - (IBAction)startSearch:(id)sender {
-//    if([self.fromDate.text isEqual:@""]){
-//        [self showAlertView:0];
-//    }else if(!self.selectedCanteen){
-//        [self showAlertView:1];
-//    }else{
+     if([self.fromDate.text isEqual:@""]){
+        [self showAlertView:0];
+      }else if(!self.selectedCanteen){
+        [self showAlertView:1];
+      }else{
         [self setSendStrFromDate:self.fromDate.text];
         [self setSendStrToDate:self.toDate.text];
         [self setSendStrLocation:self.selectedCanteen];
-//
-//        
-//      //  [self performSegueWithIdentifier:@"toSearchResults" sender:nil];
-//    }
+        NSLog(@"%s:%@",__func__,sendStr);
+        [self performSegueWithIdentifier:@"toSearchResults" sender:nil];
+    }
 }
 #pragma mark 传递查询信息
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"%s",__func__);
     id destVc=segue.destinationViewController;
     if ([destVc isKindOfClass:[SearchResultsViewController class]]) {
         SearchResultsViewController *searchresult =destVc;

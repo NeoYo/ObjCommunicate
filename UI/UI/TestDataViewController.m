@@ -38,7 +38,7 @@
     NSPersistentStoreCoordinator *store=[[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:model];
     NSError *error=nil;
     NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-    NSLog(@"%@",doc);
+//    NSLog(@"%@",doc);
     NSString *sqlitePath=[doc stringByAppendingString:@"/record.db"];
     [store addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:sqlitePath] options:nil error:&error];
     context.persistentStoreCoordinator=store;
