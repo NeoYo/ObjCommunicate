@@ -37,9 +37,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //Test
-    self.fromDate.text=@"2015/1/1";
-    self.toDate.text=@"2015/8/2";
-    self.selectedCanteen=3;
+//    self.fromDate.text=@"2015/1/1";
+//    self.toDate.text=@"2015/8/2";
     
     self.navigationController.navigationBarHidden=YES;
     
@@ -161,18 +160,20 @@
 #pragma mark selectedLocation
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     self.selectedCanteen=row;
-//    NSLog(@"location:%@",canteens[self.selectedCanteen]);
-    
-//    测试：[self setSendStrLocation:[NSString stringWithFormat:@"%ld",(long)self.selectedCanteen]];
 }
 
 
 #pragma mark 按下开始查询的按钮
 - (IBAction)startSearch:(id)sender {
+    static int canteenTipTag=0;
      if([self.fromDate.text isEqual:@""]){
         [self showAlertView:0];
-      }else if(!self.selectedCanteen){
+     }else if([self.toDate.text isEqual:@""]){
+         [self showAlertView:2];
+         NSLog(@"here.....");
+     }else if(canteenTipTag==0&&!self.selectedCanteen){
         [self showAlertView:1];
+         canteenTipTag=1;
       }else{
         [self setSendStrFromDate:self.fromDate.text];
         [self setSendStrToDate:self.toDate.text];
@@ -192,44 +193,51 @@
 
 
 
-
+#pragma mark 对AlertView方法的封装
 //这个方法用于对alertView的优化，避免多次创建alertView,减少代码量
 -(void)showAlertView:(NSInteger )tag{
     //alert存在不需要创建
     if (self.alert) {
-        if (tag) { //tag==1:location
+        if (tag==1) { //tag==1:location
+//warning 用if判断时要注意 if(tag)  tag只要不是0都会进入！
             self.alert.message=@"点击确定查询全部食堂的记录";
+        }else if(tag==2){
+            self.alert.message=@"点击确定继续填写\n   查询的结束时间填写不完整";
+            NSLog(@"%s,%ld",__func__,(long)tag);
         }else{//tag==0:fromDate
             self.alert.message=@"点击确定继续填写\n   查询的开始时间填写不完整";
         }
     }
     //alert还没创建
     else{
-        if (tag) { //tag==1:location
+        if (tag==1) { //tag==1:location
             self.alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"点击确定查询全部食堂的记录" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-        }else{//tag==0:fromDate
+        }else if (tag==2){
+            self.alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"点击确定继续填写\n   查询的结束时间填写不完整" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        } else{//tag==0:fromDate
             self.alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"点击确定继续填写\n   查询的开始时间填写不完整" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         }
     }
     self.alert.tag=tag;
     [self.alert show];
 }
-
-
 #pragma mark 判断用户点击AlertView的那个按钮
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSLog(@"alertView is clicked");
     if (alertView.tag==0) {
         if (buttonIndex) {
             NSLog(@"User clicked yes in fromDate");
-        } else {
-             NSLog(@"User clicked cancel in fromDate");
+            [self.view endEditing:YES];
+            [self.fromDate becomeFirstResponder];
         }
-    }else {
+    }else if(alertView.tag==2){
         if (buttonIndex) {
-            NSLog(@"User clicked yes in loacation");
-        } else {
-            NSLog(@"User clicked cancel in location");
+            [self.view endEditing:YES];
+            [self.toDate becomeFirstResponder];
+        }
+    } else {
+        if (buttonIndex) {
+            [self startSearch:nil];
         }
     }
 }
@@ -294,7 +302,9 @@
     [socket writeData:data2 withTimeout:-1 tag:101];
 }
 
-
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
