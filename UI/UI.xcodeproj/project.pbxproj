@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C80DE2D71B74E6E100E959A6 /* MonthRecords.m in Sources */ = {isa = PBXBuildFile; fileRef = C80DE2D61B74E6E100E959A6 /* MonthRecords.m */; };
+		C831CE3B1B56017800C3AFD4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8A074F31B55F847000AC691 /* Info.plist */; };
 		C831CE3D1B56019400C3AFD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C831CE3C1B56019400C3AFD4 /* Main.storyboard */; };
 		C831CE401B56026300C3AFD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE3F1B56026300C3AFD4 /* ViewController.m */; };
 		C831CE491B56028F00C3AFD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C831CE481B56028F00C3AFD4 /* AppDelegate.m */; };
@@ -310,12 +311,11 @@
 		C8A074E71B55F847000AC691 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = liveabean;
 				TargetAttributes = {
 					C8A074EE1B55F847000AC691 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 9EDB5E4E8A;
 					};
 					C8A075071B55F848000AC691 = {
 						CreatedOnToolsVersion = 6.4;
@@ -348,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C83204F01B6B0E09009DC1C2 /* RecordCell.xib in Resources */,
+				C831CE3B1B56017800C3AFD4 /* Info.plist in Resources */,
 				C87302FA1B65ED5300DADCA7 /* Images.xcassets in Resources */,
 				C831CE3D1B56019400C3AFD4 /* Main.storyboard in Resources */,
 				C8F64C261B6515D300FBF2D5 /* KeyboardToolbar.xib in Resources */,
@@ -439,7 +440,6 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -455,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -492,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -504,11 +504,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = UI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.liveabean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -518,11 +516,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = UI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.liveabean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -541,7 +537,6 @@
 				);
 				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.liveabean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UI.app/UI";
 			};
@@ -557,7 +552,6 @@
 				);
 				INFOPLIST_FILE = UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.liveabean.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UI.app/UI";
 			};

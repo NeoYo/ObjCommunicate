@@ -61,7 +61,6 @@
     NSArray *arr=[sendStr componentsSeparatedByString:@":"];
     NSArray *dateMin=[arr[2] componentsSeparatedByString:@"/"];
     NSArray *dateMax=[arr[3] componentsSeparatedByString:@"/"];
-    int canteen=[arr[4] intValue];
     
     NSNumber *minMonth=[NSNumber numberWithInt:[dateMin[1] intValue]];
     NSNumber *minDay=[NSNumber numberWithInt:[dateMin[2] intValue]];
@@ -83,22 +82,12 @@
         //生成自定义月消费记录的对象
         MonthRecords *monthRecords=[MonthRecords monthRecordsWithTitle:[NSString stringWithFormat:@"%@",month]];
         NSPredicate *pre;
-        if (canteen==0) {
-            if (i==0) {
-                pre = [NSPredicate predicateWithFormat:@"month=%@ AND day>=%@",month,minDay];
-            }else if(i==SectionsCount-1){
-                pre = [NSPredicate predicateWithFormat:@"month=%@  AND day<=%@",month,maxDay];
-            }else{
-                pre = [NSPredicate predicateWithFormat:@"month=%@",month];
-            }
-        }else {
-            if (i==0) {
-                pre = [NSPredicate predicateWithFormat:@"month=%@ AND day>=%@ AND location=%@",month,minDay,arr[4]];
-            }else if(i==SectionsCount-1){
-                pre = [NSPredicate predicateWithFormat:@"month=%@  AND day<=%@ AND location=%@",month,maxDay,arr[4]];
-            }else{
-                pre = [NSPredicate predicateWithFormat:@"month=%@ AND location=%@",month,arr[4]];
-            }
+        if (i==0) {
+            pre = [NSPredicate predicateWithFormat:@"month=%@ AND day>=%@",month,minDay];
+        }else if(i==SectionsCount-1){
+            pre = [NSPredicate predicateWithFormat:@"month=%@  AND day<=%@",month,maxDay];
+        }else{
+            pre = [NSPredicate predicateWithFormat:@"month=%@",month];
         }
         request.predicate = pre;
         //读取信息

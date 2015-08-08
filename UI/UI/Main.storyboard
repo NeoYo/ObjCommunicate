@@ -127,6 +127,15 @@
                                     <rect key="frame" x="0.0" y="-346" width="334" height="914"/>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查询历史记录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D29-PO-z2m">
+                                <rect key="frame" x="103" y="47" width="128" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="103" y="47" width="128" height="50"/>
+                                </variation>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pq-EB-S75">
                                 <rect key="frame" x="47" y="154" width="60" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -161,6 +170,19 @@
                                     <rect key="frame" x="131" y="197" width="116" height="30"/>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-VS-Fu1">
+                                <rect key="frame" x="128" y="393" width="78" height="61"/>
+                                <state key="normal" title="TestSearch">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="128" y="408" width="78" height="62"/>
+                                </variation>
+                                <connections>
+                                    <action selector="startSearch:" destination="pfy-eu-4kg" eventType="touchUpInside" id="4U3-hQ-g6R"/>
+                                </connections>
+                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GV3-1S-77w">
                                 <rect key="frame" x="115" y="219" width="136" height="96"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -171,54 +193,30 @@
                                     <outlet property="delegate" destination="pfy-eu-4kg" id="9hc-hY-8NT"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1k-VS-Fu1">
-                                <rect key="frame" x="128" y="393" width="78" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="查询" backgroundImage="trytry">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted" backgroundImage="trytrytry"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                                    <rect key="frame" x="99" y="419" width="136" height="42"/>
-                                </variation>
-                                <connections>
-                                    <action selector="startSearch:" destination="pfy-eu-4kg" eventType="touchUpInside" id="4U3-hQ-g6R"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查询历史记录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D29-PO-z2m">
-                                <rect key="frame" x="103" y="47" width="128" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="92" y="42" width="151" height="57"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="pfG-OX-56I"/>
+                                <exclude reference="D29-PO-z2m"/>
                                 <exclude reference="0pq-EB-S75"/>
                                 <exclude reference="Snk-kk-VFf"/>
                                 <exclude reference="aZT-pT-vle"/>
                                 <exclude reference="o1J-Cs-GYv"/>
-                                <exclude reference="GV3-1S-77w"/>
                                 <exclude reference="j1k-VS-Fu1"/>
-                                <exclude reference="D29-PO-z2m"/>
+                                <exclude reference="GV3-1S-77w"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="pfG-OX-56I"/>
+                                <include reference="D29-PO-z2m"/>
                                 <include reference="0pq-EB-S75"/>
                                 <include reference="Snk-kk-VFf"/>
                                 <include reference="aZT-pT-vle"/>
                                 <include reference="o1J-Cs-GYv"/>
-                                <include reference="GV3-1S-77w"/>
                                 <include reference="j1k-VS-Fu1"/>
-                                <include reference="D29-PO-z2m"/>
+                                <include reference="GV3-1S-77w"/>
                             </mask>
                         </variation>
                     </view>
@@ -344,7 +342,5 @@
     </scenes>
     <resources>
         <image name="pureblue" width="750" height="1334"/>
-        <image name="trytry" width="101" height="66"/>
-        <image name="trytrytry" width="67" height="70"/>
     </resources>
 </document>
