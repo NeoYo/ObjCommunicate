@@ -27,8 +27,8 @@
 // 08:36:11  12:53:28   20:45:33   09:55:43   13:23:34   15:21:46    16:32:34    19:32:22   11:14:56
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self setupContext];
-    [self searchWithSendStr:@"chaxun:2012160063:2015/6/20:2015/7/10:1"];
-//    [self testAdd];
+//    [self searchWithSendStr:@"chaxun:2012160063:2015/6/20:2015/7/10:1"];
+    [self testAdd];
 
 }
 
@@ -38,7 +38,7 @@
     NSPersistentStoreCoordinator *store=[[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:model];
     NSError *error=nil;
     NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-//    NSLog(@"%@",doc);
+    NSLog(@"%@",doc);
     NSString *sqlitePath=[doc stringByAppendingString:@"/record.db"];
     [store addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:sqlitePath] options:nil error:&error];
     context.persistentStoreCoordinator=store;

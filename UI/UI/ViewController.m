@@ -55,12 +55,12 @@
 //    测试
     [self logIn];
     
-//    
-//    [MBProgressHUD showMessage:@"拼命登录中..."];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [MBProgressHUD hideHUD];
-//        [self performSegueWithIdentifier:@"toMainView" sender:nil];
-//    });
+    
+    [MBProgressHUD showMessage:@"拼命登录中..."];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUD];
+        [self performSegueWithIdentifier:@"toMainView" sender:nil];
+    });
 }
 
 
