@@ -136,7 +136,7 @@
     RecordCell *cell=[RecordCell recordCellWithTableView:tableView];
     //section 0
     if (indexPath.section==0) {
-        cell.location.image=[UIImage imageNamed:@"canteen.jpg"];
+//        cell.location.image=[UIImage imageNamed:@"canteen.jpg"];
     //section 1
     } else if(indexPath.section==1) {
     }

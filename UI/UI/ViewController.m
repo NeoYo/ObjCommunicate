@@ -10,6 +10,10 @@
 #import "GCDAsyncSocket.h"
 #import "MBProgressHUD+CZ.h"
 
+#define rememberPwdKey @"rememberPwd"//记录密码
+#define autoLoginKey @"autoLogin"//自动登录
+#define studentIdKey @"studentId"//帐号
+#define passwordKey @"password"
 
 
 @interface ViewController ()<NSStreamDelegate,GCDAsyncSocketDelegate>{
@@ -21,7 +25,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *studentID;
 @property (weak, nonatomic) IBOutlet UITextField *passWord;
 - (IBAction)logIn:(id)sender;
-- (IBAction)hideKyboard:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *rememberPwdSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *autoLoginSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *logInbtn;
 
 @end
 
@@ -30,70 +36,110 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self showLogInfobefore];
+    
+    // 设置 “开关” 默认值
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.rememberPwdSwitch.on = [defaults boolForKey:rememberPwdKey];
+    self.autoLoginSwitch.on = [defaults boolForKey:autoLoginKey];
+    
+    // 设置 帐号 和 密码 默认值
+    self.studentID.text = [defaults objectForKey:studentIdKey];
+    if (self.rememberPwdSwitch.isOn) {
+        self.passWord.text = [defaults objectForKey:passwordKey];
+    }
+    
+    //调用 文本变化 的方法
+    [self textChange];
+    
+    // 如果 "自动登录" 勾选，让自动登录
+    if (self.autoLoginSwitch.isOn) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self logIn:nil];
+        });
+    }
+    
 }
-
+- (IBAction)nextTopasswordField:(id)sender {
+    [self.studentID endEditing:YES];
+    [self.passWord becomeFirstResponder];
+}
+//监听文本输入框变化
+-(IBAction)textChange{
+    self.logInbtn.enabled = (self.studentID.text.length != 0 && self.passWord.text.length != 0);
+    //没有值，禁用登录按钮
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)logIn:(id)sender {
-    NSString *logInfo=[NSString stringWithFormat:@"%@",self.studentID.text];
-    NSString *docDir=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString *logInfoFile=[docDir stringByAppendingPathComponent:@"logInfo.csv"];
-    //不存在就创建文件，存在但是logInfo<logInfoBefore (else if)也要创建文件
-    if (![[NSFileManager defaultManager]fileExistsAtPath:logInfoFile]) {
-        [[NSFileManager defaultManager]createFileAtPath:logInfoFile contents:nil attributes:nil];
-    }else if([logInfo length]<[[self logInfoBefore]length] ){
-        [[NSFileManager defaultManager]createFileAtPath:logInfoFile contents:nil attributes:nil];
-    }
-
-    NSFileHandle *fileHandleWrite=[NSFileHandle fileHandleForUpdatingAtPath:logInfoFile];
-    [fileHandleWrite writeData:[logInfo dataUsingEncoding:NSUTF8StringEncoding]];
-    [fileHandleWrite closeFile];
 //    测试
-    [self logIn];
+//    [self logIn];
     
     
     [MBProgressHUD showMessage:@"拼命登录中..."];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUD];
-        [self performSegueWithIdentifier:@"toMainView" sender:nil];
+        if (/* DISABLES CODE */ (1)) {
+            //保存用户帐和密码
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:self.studentID.text forKey:studentIdKey];
+            //只有 "记住密码" 为开启的状态，才要保存
+            if (self.rememberPwdSwitch.isOn) {
+                [defaults setObject:self.passWord.text forKey:passwordKey];
+            }
+            [defaults synchronize];
+            //密码正确而且存储完信息将进入主界面
+            [self performSegueWithIdentifier:@"toMainView" sender:nil];
+        } else {
+            [MBProgressHUD showError:@"学号或密码错误"];
+        }
     });
 }
 
-
-
-- (IBAction)hideKyboard:(id)sender {
-    [self.studentID resignFirstResponder];
-    [self.passWord resignFirstResponder];
-}
-
-
--(void)showLogInfobefore{
-    NSString *logInfoBefore=[self logInfoBefore];
-    if (logInfoBefore) {
-        self.studentID.text=logInfoBefore;
+/**
+ *  记录密码开关的值变化
+ */
+- (IBAction)rememberPwdSwitchChange {
+    //如果记住密码 为 关闭状态，并且 自动登录为 开启的状态，此时，自动登录 应改为关闭
+    if(self.rememberPwdSwitch.isOn == NO && self.autoLoginSwitch.isOn == YES){
+        //self.autoLoginSwitch.on = NO;
+        
+        //添加动画
+        [self.autoLoginSwitch setOn:NO animated:YES];
     }
+    //保存开关数据
+    [self saveSwitchToPreference];
 }
--(NSString *)logInfoBefore{
-    //Document path
-    NSString *docDir=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    //Document Path+logInfo.csv
-    NSString *logInfoFile=[docDir stringByAppendingPathComponent:@"logInfo.csv"];
-    if ([[NSFileManager defaultManager]fileExistsAtPath:logInfoFile]) {
-        NSFileHandle *fileHandleRead=[NSFileHandle fileHandleForReadingAtPath:logInfoFile];
-        NSString *logInfoBefore= [[NSString alloc]initWithData:[fileHandleRead availableData] encoding:NSUTF8StringEncoding];
-        [fileHandleRead closeFile];
-        return logInfoBefore;
-    }else{
-        return nil;
+
+/**
+ *  自动登录开关的值变化
+ */
+- (IBAction)autoLoginSwitchChange {
+    
+    //如果 自动登录  为 开启状态 并且 记住密码为 关闭状态，些时，记住密码应改为开启
+    if(self.autoLoginSwitch.isOn == YES  && self.rememberPwdSwitch.isOn == NO){
+        [self.rememberPwdSwitch setOn:YES animated:YES];
     }
+    
+    [self saveSwitchToPreference];
 }
 
+/**
+ *  保存开关数据 到 用户偏好设置
+ */
+-(void)saveSwitchToPreference{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:self.rememberPwdSwitch.isOn forKey:rememberPwdKey];
+    [defaults setBool:self.autoLoginSwitch.isOn forKey:autoLoginKey];
+    [defaults synchronize];
+}
 
-
+//隐藏键盘
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
 
 
 

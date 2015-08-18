@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Record.h"
 @interface RecordCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *location;
 +(instancetype)recordCellWithTableView:(UITableView *)tableView;
 -(void)setRecordCell:(Record *)record;
 @end
