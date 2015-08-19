@@ -349,10 +349,10 @@
             </objects>
             <point key="canvasLocation" x="-283" y="1234"/>
         </scene>
-        <!--Sms-->
+        <!--HomeNetWork-->
         <scene sceneID="zAs-O1-BkP">
             <objects>
-                <viewController id="SAP-RG-hfS" userLabel="Sms" sceneMemberID="viewController">
+                <viewController id="SAP-RG-hfS" userLabel="HomeNetWork" customClass="HomeNetWorkViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ScG-dK-tbD"/>
                         <viewControllerLayoutGuide type="bottom" id="clT-oU-REJ"/>

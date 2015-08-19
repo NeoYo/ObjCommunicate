@@ -454,8 +454,7 @@ enum GCDAsyncSocketConfig
 		// Either reading until we find a specified terminator,
 		// or we're simply reading all available data.
 		// 
-		// In other words, one of:
-		// 
+		// In other words, one of: 		//
 		// - readDataToData packet
 		// - readDataWithTimeout packet
 		

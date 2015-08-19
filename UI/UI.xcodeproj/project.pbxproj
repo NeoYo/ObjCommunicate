@@ -26,6 +26,7 @@
 		C8A075031B55F847000AC691 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A075011B55F847000AC691 /* LaunchScreen.xib */; };
 		C8B9EB6A1B6A0863002708CE /* Records.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8B9EB681B6A0863002708CE /* Records.xcdatamodeld */; };
 		C8B9EB6D1B6A08E8002708CE /* TestDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B9EB6C1B6A08E8002708CE /* TestDataViewController.m */; };
+		C8E181E91B8476A100DDC3A3 /* HomeNetWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E181E81B8476A100DDC3A3 /* HomeNetWorkViewController.m */; };
 		C8E5EB0A1B5D3C620053F662 /* SocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E5EB091B5D3C620053F662 /* SocketViewController.m */; };
 		C8EC4B381B6CEA2700B4BE4D /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EC4B371B6CEA2700B4BE4D /* GCDAsyncSocket.m */; };
 		C8F64C261B6515D300FBF2D5 /* KeyboardToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8F64C251B6515D300FBF2D5 /* KeyboardToolbar.xib */; };
@@ -75,6 +76,8 @@
 		C8B9EB691B6A0863002708CE /* Records.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Records.xcdatamodel; sourceTree = "<group>"; };
 		C8B9EB6B1B6A08E8002708CE /* TestDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataViewController.h; sourceTree = "<group>"; };
 		C8B9EB6C1B6A08E8002708CE /* TestDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataViewController.m; sourceTree = "<group>"; };
+		C8E181E71B8476A100DDC3A3 /* HomeNetWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNetWorkViewController.h; sourceTree = "<group>"; };
+		C8E181E81B8476A100DDC3A3 /* HomeNetWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNetWorkViewController.m; sourceTree = "<group>"; };
 		C8E5EB081B5D3C620053F662 /* SocketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketViewController.h; sourceTree = "<group>"; };
 		C8E5EB091B5D3C620053F662 /* SocketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketViewController.m; sourceTree = "<group>"; };
 		C8EC4B361B6CEA2700B4BE4D /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
@@ -112,18 +115,13 @@
 			name = RecordCell;
 			sourceTree = "<group>";
 		};
-		C854E81B1B6A568400323A65 /* Model */ = {
+		C854E81B1B6A568400323A65 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				C8B9EB681B6A0863002708CE /* Records.xcdatamodeld */,
-				C849D6491B74881800A98940 /* Record.h */,
-				C849D64A1B74881800A98940 /* Record.m */,
 				C8B9EB6B1B6A08E8002708CE /* TestDataViewController.h */,
 				C8B9EB6C1B6A08E8002708CE /* TestDataViewController.m */,
-				C80DE2D51B74E6E100E959A6 /* MonthRecords.h */,
-				C80DE2D61B74E6E100E959A6 /* MonthRecords.m */,
 			);
-			name = Model;
+			name = Test;
 			sourceTree = "<group>";
 		};
 		C86857A11B704D120096C850 /* MBProgressHUD */ = {
@@ -160,10 +158,12 @@
 			isa = PBXGroup;
 			children = (
 				C86857A11B704D120096C850 /* MBProgressHUD */,
-				C854E81B1B6A568400323A65 /* Model */,
+				C854E81B1B6A568400323A65 /* Test */,
 				C8ED237B1B57585E00772367 /* other */,
 				C8E5EB071B5D3AE20053F662 /* Socket */,
-				C8E5EB061B5D3A630053F662 /* UIViewController */,
+				C8E181E61B8474A600DDC3A3 /* Search */,
+				C8E585C31B61EC4900FA3950 /* InitialView */,
+				C8E181EA1B8476B300DDC3A3 /* HomeNetWork */,
 				C831CE3C1B56019400C3AFD4 /* Main.storyboard */,
 				C8A075011B55F847000AC691 /* LaunchScreen.xib */,
 				C8A074F21B55F847000AC691 /* Supporting Files */,
@@ -198,6 +198,45 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C8E181E41B8424E900DDC3A3 /* Moddel */ = {
+			isa = PBXGroup;
+			children = (
+				C80DE2D51B74E6E100E959A6 /* MonthRecords.h */,
+				C80DE2D61B74E6E100E959A6 /* MonthRecords.m */,
+				C8B9EB681B6A0863002708CE /* Records.xcdatamodeld */,
+				C849D6491B74881800A98940 /* Record.h */,
+				C849D64A1B74881800A98940 /* Record.m */,
+			);
+			name = Moddel;
+			sourceTree = "<group>";
+		};
+		C8E181E51B84250900DDC3A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
+				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C8E181E61B8474A600DDC3A3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C8F64C211B64C61700FBF2D5 /* Search */,
+				C8E585C41B61EC6300FA3950 /* SearchResult */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		C8E181EA1B8476B300DDC3A3 /* HomeNetWork */ = {
+			isa = PBXGroup;
+			children = (
+				C8E181E71B8476A100DDC3A3 /* HomeNetWorkViewController.h */,
+				C8E181E81B8476A100DDC3A3 /* HomeNetWorkViewController.m */,
+			);
+			name = HomeNetWork;
+			sourceTree = "<group>";
+		};
 		C8E585C31B61EC4900FA3950 /* InitialView */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,21 +249,11 @@
 		C8E585C41B61EC6300FA3950 /* SearchResult */ = {
 			isa = PBXGroup;
 			children = (
-				C831CE4F1B5632CC00C3AFD4 /* SearchResultsViewController.h */,
-				C831CE501B5632CC00C3AFD4 /* SearchResultsViewController.m */,
+				C8E181E51B84250900DDC3A3 /* Controller */,
+				C8E181E41B8424E900DDC3A3 /* Moddel */,
 				C83204F11B6B143E009DC1C2 /* RecordCell */,
 			);
 			name = SearchResult;
-			sourceTree = "<group>";
-		};
-		C8E5EB061B5D3A630053F662 /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C8F64C211B64C61700FBF2D5 /* Search */,
-				C8E585C41B61EC6300FA3950 /* SearchResult */,
-				C8E585C31B61EC4900FA3950 /* InitialView */,
-			);
-			name = UIViewController;
 			sourceTree = "<group>";
 		};
 		C8E5EB071B5D3AE20053F662 /* Socket */ = {
@@ -380,6 +409,7 @@
 				C831CE511B5632CC00C3AFD4 /* SearchResultsViewController.m in Sources */,
 				C8B9EB6A1B6A0863002708CE /* Records.xcdatamodeld in Sources */,
 				C8B9EB6D1B6A08E8002708CE /* TestDataViewController.m in Sources */,
+				C8E181E91B8476A100DDC3A3 /* HomeNetWorkViewController.m in Sources */,
 				C86857A91B704D120096C850 /* MBProgressHUD.m in Sources */,
 				C8E5EB0A1B5D3C620053F662 /* SocketViewController.m in Sources */,
 				C83204EF1B6B0E09009DC1C2 /* RecordCell.m in Sources */,
