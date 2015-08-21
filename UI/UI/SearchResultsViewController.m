@@ -177,6 +177,7 @@
     self.navigationController.navigationBarHidden=YES;
     [self showTabBar];
 }
+#pragma mark 对TabBar的定制
 - (void)showTabBar
 {
     if (self.tabBarController.tabBar.hidden == NO)
